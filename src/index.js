@@ -18,6 +18,9 @@ const getTimezoneDetails = (timezone) => {
 };
 
 const getOffset = (zone) => {
+  if (!zone) {
+    return { status: "Invalid call: zone is required field" };
+  }
   const zoneDetails = getTimezoneDetails(zone);
   if (zoneDetails.status !== "OK") {
     return { status: zoneDetails.status };
