@@ -50,7 +50,7 @@ const convertFromUTC = ({ date, utc_offset, zone } = {}) => {
   }
   if (!utc_offset) {
     if (!zone) {
-      return { status: "OK", iso_date: new Date().toISOString() };
+      return { status: "OK", iso_date: date.toISOString() };
     }
     const offset = getOffset(zone);
     if (offset.status !== "OK") {
@@ -99,7 +99,7 @@ const convertToUTC = ({ date, utc_offset, zone } = {}) => {
   }
   if (!utc_offset) {
     if (!zone) {
-      return { status: "OK", iso_date: new Date().toISOString() };
+      return { status: "OK", iso_date: date.toISOString() };
     }
     const offset = getOffset(zone);
     if (offset.status !== "OK") {
