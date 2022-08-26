@@ -1,5 +1,4 @@
-// const timezones = require("../data/timezone.js");
-import timezones from "../data/timezone.js";
+const timezones = require("../data/timezone.js")
 
 const getAllTimezoneDetails = () => {
   return timezones;
@@ -128,5 +127,9 @@ const getCurrentDateTime = ({ utc_offset, zone } = {}) => {
   return convertFromUTC({ date: new Date(), utc_offset, zone });
 };
 
-
-console.log(getTimezoneDetails("A"));
+exports.getAllTimezoneDetails = getAllTimezoneDetails;
+exports.getTimezoneDetails = getTimezoneDetails;
+exports.getOffset = getOffset;
+exports.convertFromUTC = convertFromUTC;
+exports.convertToUTC = convertToUTC;
+exports.getCurrentDateTime = getCurrentDateTime;

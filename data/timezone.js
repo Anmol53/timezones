@@ -1930,4 +1930,4 @@ const timezones = [
         "utc_offset": "+01:00"
     }
 ];
-export default timezones;
+module.exports = timezones;
