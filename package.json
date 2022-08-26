@@ -1,12 +1,17 @@
 {
   "name": "timezones",
   "version": "1.0.0",
-  "description": "",
+  "description": "A light and fast package to lookup timezones, get current datetime in any timezone, convert datetime timezones from utc to another timezone or vica-versa",
   "main": "src/index.js",
   "scripts": {
-    "start" : "nodemon src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "keywords": [
+    "timezone",
+    "timezone convertor",
+    "utc to timezone",
+    "geo"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Anmol53/timezones.git"
