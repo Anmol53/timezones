@@ -20,12 +20,12 @@ const timezones = require("timezones")
 
 ## Methods
 
-- [getAllTimezoneDetails()](#getAllTimezoneDetails())
-- [getTimezoneDetails()](#getTimezoneDetails())
-- [getOffset()](#getOffset())
-- [convertFromUTC()](#convertFromUTC())
-- [convertToUTC()](#convertToUTC())
-- [getCurrentDateTime()](#getCurrentDateTime())
+- [getAllTimezoneDetails()](#getAllTimezoneDetails)
+- [getTimezoneDetails()](#getTimezoneDetails)
+- [getOffset()](#getOffset)
+- [convertFromUTC()](#convertFromUTC)
+- [convertToUTC()](#convertToUTC)
+- [getCurrentDateTime()](#getCurrentDateTime)
 
 
 ## Examples
