@@ -152,7 +152,7 @@ Output:
     - `date` *(required) Must be a JS Date* 
     - `utc_offset`
     - `zone`
-- **Note:** If both utc_offset and zone are not passed, function will just format ***`date`*** too ISO format and return it.
+- **Note:** If both utc_offset and zone are not passed, function will just format ***`date`*** to ISO format and return it.
 - Examples:
 ``` js
 //Example 1
@@ -264,9 +264,134 @@ Output:
 ***
 
 ### convertToUTC()
+- Will return date (in ISO Format) in UTC timezone from passed timezone.
+- Parameters:
+    - `date` *(required) Must be a JS Date* 
+- Examples:
+``` js
+//Example 1
+const required_date = timezones.convertToUTC();
+console.log(required_date);
+
+/*
+Output:
+{
+    status: 'Invalid Date'
+}
+*/
+```
+``` js
+//Example 2
+const required_date = timezones.convertToUTC({date : "2022/11/06"});
+console.log(required_date);
+
+/*
+Output:
+{
+    status: 'Invalid Date'
+}
+*/
+// Reason: Date is not an JS Date
+```
+``` js
+//Example 3
+const inputDate = new Date("Wed May 18 2022 21:38:17 GMT+0530");
+const required_date = timezones.convertToUTC({date : inputDate});
+console.log(required_date);
+
+/*
+Output:
+{
+    status: 'OK',
+    iso_date: '2022-05-18T16:08:17.000Z'
+}
+*/
+```
 ***
 
 ### getCurrentDateTime()
+- Will return date (in ISO Format) in required timezone.
+- Parameters:
+    - `utc_offset`
+    - `zone`
+- **Note:** If both utc_offset and zone are not passed, function will return UTC datetime.
+- Examples:
+``` js
+//Example 1
+const required_date = timezones.getCurrentDateTime();
+console.log(required_date);
+
+/*
+Output:
+{
+    status: 'OK',
+    iso_date: '2022-08-27T09:27:49.146Z'
+}
+*/
+```
+``` js
+//Example 2
+const required_date = timezones.getCurrentDateTime({utc_offset : "abc"});
+console.log(required_date);
+
+/*
+Output:
+{
+    status: 'Invalid Offset',
+}
+*/
+```
+``` js
+//Example 3
+const required_date = timezones.getCurrentDateTime({utc_offset : "+05:30"});
+console.log(required_date);
+
+/*
+Output:
+{
+    status: 'OK',
+    iso_date: '2022-08-27T14:57:49.146+05:30'
+}
+*/
+```
+``` js
+//Example 4
+const required_date = timezones.getCurrentDateTime({zone : "Australia/Sydney"});
+console.log(required_date);
+
+/*
+Output:
+{
+    status: 'OK',
+    iso_date: '2022-08-27T19:27:49.146+10:00'
+}
+*/
+```
+``` js
+//Example 5
+const required_date = timezones.getCurrentDateTime({zone : "Australia/Sydney", utc_offset : "+09:00"});
+console.log(required_date);
+
+/*
+Output:
+{
+    status: 'utc_offset does not matched with zone'
+}
+*/
+```
+``` js
+//Example 6
+const required_date = timezones.getCurrentDateTime({zone : "Australia/Sydney", utc_offset : "+10:00"});
+console.log(required_date);
+
+/*
+Output:
+{
+    status: 'OK',
+    iso_date: '2022-08-27T19:27:49.146+10:00'
+}
+*/
+```
 ***
 
 
