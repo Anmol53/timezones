@@ -4,11 +4,11 @@
 
 A light and fast package to lookup timezones, get current datetime in any timezone, convert datetime timezones from utc to another timezone or vica-versa.
 
-## Installation
+<!-- ## Installation
 
 ```bash
 npm install timezones
-```
+``` -->
 
 ## Usage
 
